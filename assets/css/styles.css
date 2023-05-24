@@ -1,0 +1,139 @@
+:root {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 10px;
+  padding: 10px;
+  background-color: azure;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.1;
+  color: seagreen;
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.1;
+  color: lightseagreen;
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type=text] {
+  margin: 1.2em;
+  padding: 0.6em 1.2em;
+  border: 2px solid aquamarine;
+  border-radius: 20px;
+  background-color: aliceblue;
+  background-image: url(../images/search.png);
+  background-size: 18px;
+  background-position: 10px;
+  background-repeat: no-repeat;
+  font-size: 1em;
+  padding-left: 40px;
+  ;
+}
+
+input[type=text]:focus {
+  border: 2px solid rgba(11, 107, 11, 0.876);
+}
+
+button {
+  border-radius: 208px;
+  border: 1px solid transparent;
+  margin: 1.2em;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: aquamarine;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  box-shadow: rgb(162, 249, 249);
+}
+
+button:hover {
+  border-color: #00ad48;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+li {
+  list-style-type: none;
+}
+
+.card-search {
+  width: 90%;
+  max-width: 470px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.search {
+  display: flex;
+  width: auto;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  margin: 1em;
+  padding: 0.6em 1.2em;
+  flex-wrap: wrap;
+}
+
+.card-weather {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 470px;
+  border: 1px solid rgb(13, 36, 5);
+  border-radius: 40px;
+  background: linear-gradient(60deg, rgba(233, 150, 122, 0.5) 50%, rgba(0, 255, 255, 0.5));
+}
+
+.temperature {
+  margin: 0.2em;
+  padding: 0.4em 0.2em 0.2em 0.2em;
+}
+.city {
+  margin: 0.1em;
+  padding: 0.1em;
+}
+.icon {
+  width: 30%;
+  margin: 0.1em;
+  padding: 0.1em 0.2em 0.2em 0.2em;
+}
