@@ -37,7 +37,9 @@ var icon5 = document.getElementById('icon-5');
 var humidity5 = document.getElementById('hum-5');
 var wind5 = document.getElementById('wind-5');
 
-function getTodayTemp() {
+console.log(cityInput);
+
+function getTodayTemp(cityInput) {
   var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=metric&appid=${apiKey}`;
 
   fetch(apiUrl, {
@@ -48,15 +50,17 @@ function getTodayTemp() {
   })
   .then(function(data) {
     console.log(data);
-    city.textContents = data.city.name;
+    city.textContent = data.city.name;
     tempToday.textContent = `${Math.floor(data.main.temp)} °C`;
-    iconToday.setAttribute = ("src, "`${data.weather[0].icon}@2x.png`);
+    iconToday.setAttribute = ("src", `${data.weather[0].icon}@2x.png`);
     humidityToday.textContent = `${data.main.humidity}%`;
     windToday.textContent = `${data.wind.speed} km/h`;
+
+    // localStorage.setItem(cityInput);
   })
 };
 
-function getForecast() {
+function getForecast(cityInput) {
   
   var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&units=metric&appid=${apiKey}`;
   
@@ -68,31 +72,31 @@ function getForecast() {
     .then(function (data) {
       console.log(data);
       temp1.textContent = `${Math.floor(data.list[3].main.temp)} °C`;
-      icon1.setAttribute = ("src, "`${data.list[3].weather[0].icon}@2x.png`);
+      icon1.setAttribute = ("src", `${data.list[3].weather[0].icon}@2x.png`);
       humidity1.textContent = `${data.list[3].main.humidity}%`;
       wind1.textContent = `${data.list[3].wind.speed} km/h`;
 
 
       temp2.textContent = `${Math.floor(data.list[11].main.temp)} °C`;
-      icon2.setAttribute = ("src, "`${data.list[11].weather[0].icon}@2x.png`);
+      icon2.setAttribute = ("src", `${data.list[11].weather[0].icon}@2x.png`);
       humidity2.textContent = `${data.list[11].main.humidity}%`;
       wind2.textContent = `${data.list[11].wind.speed} km/h`;
 
 
       temp3.textContent = `${Math.floor(data.list[19].main.temp)} °C`;
-      icon3.setAttribute = ("src, "`${data.list[19].weather[0].icon}@2x.png`);
+      icon3.setAttribute = ("src", `${data.list[19].weather[0].icon}@2x.png`);
       humidity3.textContent = `${data.list[19].main.humidity}%`;
       wind3.textContent = `${data.list[19].wind.speed} km/h`;
 
 
       temp4.textContent = `${Math.floor(data.list[27].main.temp)} °C`;
-      icon4.setAttribute = ("src, "`${data.list[27].weather[0].icon}@2x.png`);
+      icon4.setAttribute = ("src", `${data.list[27].weather[0].icon}@2x.png`);
       humidity4.textContent = `${data.list[27].main.humidity}%`;
       wind4.textContent = `${data.list[27].wind.speed} km/h`;
 
 
       temp5.textContent = `${Math.floor(data.list[35].main.temp)} °C`;
-      icon5.setAttribute = ("src, "`${data.list[35].weather[0].icon}@2x.png`);
+      icon5.setAttribute = ("src", `${data.list[35].weather[0].icon}@2x.png`);
       humidity5.textContent = `${data.list[35].main.humidity}%`;
       wind5.textContent = `${data.list[35].wind.speed} km/h`;
 
@@ -102,8 +106,8 @@ function getForecast() {
   
 };
 
-searchButton.addEventListener('click', getTodayTemp());
-searchButton.addEventListener('click', getForecast());
+searchButton.addEventListener('click', getTodayTemp);
+searchButton.addEventListener('click', getForecast);
 
 
 
