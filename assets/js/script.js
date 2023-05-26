@@ -38,6 +38,7 @@ var humidity5 = document.getElementById('hum-5');
 var wind5 = document.getElementById('wind-5');
 
 console.log(cityInput);
+console.log("Hello World");
 
 function getTodayTemp(cityInput) {
   var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=metric&appid=${apiKey}`;
