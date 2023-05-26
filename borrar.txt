@@ -1,0 +1,44 @@
+are the steps to resolve. Again, this might take you some time to implement, so I cant wait for you to make all the changes simply because there are other students in need of help.
+However, If you encounter any additional issues, feel free to submit another question at that time ok?
+------------------------
+The error is occurring because the event object is being passed as an argument to the getTodayTemp and getForecast functions when you click the search button. By default, when an event listener triggers a function, it automatically passes the event object as an argument.
+In your case, this event object is [object PointerEvent], which is being stringified and passed as the cityInput to your getTodayTemp and getForecast functions. Thus, your API URL is not correctly formed because you are trying to find the weather of [object PointerEvent], which is not a valid city name.
+In order to fix this issue, you need to get the city name from the input field within the getTodayTemp and getForecast functions, not just at the start of the script.
+Your event listener code should look something like this pseudo code:
+// When the 'searchButton' is clicked
+On "click" event on 'searchButton' do the following:
+
+  // Get the value entered by the user in the 'search-input' field
+  Create a variable 'cityInput' and set it to the value from 'search-input' field
+
+  // Call the 'getTodayTemp' function with 'cityInput' as the argument
+  Execute function 'getTodayTemp' with 'cityInput' (i.e., call 'getTodayTemp' function to get today's temperature for the city specified in 'cityInput')
+
+  // Call the 'getForecast' function with 'cityInput' as the argument
+  Execute function 'getForecast' with 'cityInput' (i.e., call 'getForecast' function to get the weather forecast for the city specified in 'cityInput')
+
+// End of 'click' event
+End
+SIMPLIFIED:
+When the search button is clicked,
+  Get the city name entered by the user
+  Use this city name to get the current temperature and the forecast
+End
+Here, the value of cityInput is being retrieved when the button is clicked, and this value is being passed into the getTodayTemp and getForecast functions.
+Also, your code contains the following error when setting attributes:
+iconToday.setAttribute = ("src", `${data.weather[0].icon}@2x.png`); 
+It should be:
+iconToday.setAttribute("src", `${data.weather[0].icon}@2x.png`); 
+The same goes for icons in your getForecast function.
+And a minor correction:
+city.textContent = data.city.name; 
+should be changed based on the following information:
+In the response from OpenWeatherMap API, the city name is directly under data.name, not data.city.name.
+
+
+
+
+
+Nuevo
+01:37
+:estrella:  Take a few moments to read over everything and I will prompt you if I dont hear back in less than 5 minutes or so ok?

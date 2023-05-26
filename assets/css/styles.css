@@ -115,10 +115,11 @@ li {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+  flex: auto;
 }
 
 .card-weather {
-  width: 90%;
+  width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;

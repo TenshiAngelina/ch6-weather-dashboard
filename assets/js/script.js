@@ -37,8 +37,6 @@ var icon5 = document.getElementById('icon-5');
 var humidity5 = document.getElementById('hum-5');
 var wind5 = document.getElementById('wind-5');
 
-console.log(cityInput);
-console.log("Hello World");
 
 function getTodayTemp(cityInput) {
   var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=metric&appid=${apiKey}`;
@@ -51,13 +49,27 @@ function getTodayTemp(cityInput) {
   })
   .then(function(data) {
     console.log(data);
-    city.textContent = data.city.name;
+    city.textContent = data.name;
     tempToday.textContent = `${Math.floor(data.main.temp)} °C`;
-    iconToday.setAttribute = ("src", `${data.weather[0].icon}@2x.png`);
-    humidityToday.textContent = `${data.main.humidity}%`;
-    windToday.textContent = `${data.wind.speed} km/h`;
+    // iconToday.setAttribute("src", `${data.weather[0].icon}@2x.png`);
+    humidityToday.textContent = `${data.main.humidity}% humidity`;
+    windToday.textContent = `Wind speed: ${data.wind.speed} km/h`;
 
-    // localStorage.setItem(cityInput);
+    if(data.weather[0].main == "Clouds") {
+      iconToday.setAttribute("src", "./assets/images/clouds.png");
+    } else if(data.weather[0].main == "Clear") {
+      iconToday.setAttribute("src", "./assets/images/clear.png");
+    } else if(data.weather[0].main == "Drizzle") {
+      iconToday.setAttribute("src", "./assets/images/drizzle.png");
+    } else if(data.weather[0].main == "Mist") {
+      iconToday.setAttribute("src", "./assets/images/mMist.png");
+    } else if(data.weather[0].main == "Rain") {
+      iconToday.setAttribute("src", "./assets/images/rain.png");
+    } else if(data.weather[0].main == "Snow") {
+      iconToday.setAttribute("src", "./assets/images/snow.png");
+    }
+
+    localStorage.setItem(cityInput);
   })
 };
 
@@ -73,44 +85,111 @@ function getForecast(cityInput) {
     .then(function (data) {
       console.log(data);
       temp1.textContent = `${Math.floor(data.list[3].main.temp)} °C`;
-      icon1.setAttribute = ("src", `${data.list[3].weather[0].icon}@2x.png`);
-      humidity1.textContent = `${data.list[3].main.humidity}%`;
-      wind1.textContent = `${data.list[3].wind.speed} km/h`;
+      // icon1.setAttribute("src", `${data.list[3].weather[0].icon}@2x.png`);
+      humidity1.textContent = `${data.list[3].main.humidity}% humidity`;
+      wind1.textContent = `Wind speed: ${data.list[3].wind.speed} km/h`;
+      if(data.list[3].weather[0].main == "Clouds") {
+        iconToday.setAttribute("src", "./assets/images/clouds.png");
+      } else if(data.list[3].weather[0].main == "Clear") {
+        iconToday.setAttribute("src", "./assets/images/clear.png");
+      } else if(data.list[3].weather[0].main == "Drizzle") {
+        iconToday.setAttribute("src", "./assets/images/drizzle.png");
+      } else if(data.list[3].weather[0].main == "Mist") {
+        iconToday.setAttribute("src", "./assets/images/mMist.png");
+      } else if(data.list[3].weather[0].main == "Rain") {
+        iconToday.setAttribute("src", "./assets/images/rain.png");
+      } else if(data.list[3].weather[0].main == "Snow") {
+        iconToday.setAttribute("src", "./assets/images/snow.png");
+      }
+
 
 
       temp2.textContent = `${Math.floor(data.list[11].main.temp)} °C`;
-      icon2.setAttribute = ("src", `${data.list[11].weather[0].icon}@2x.png`);
-      humidity2.textContent = `${data.list[11].main.humidity}%`;
-      wind2.textContent = `${data.list[11].wind.speed} km/h`;
-
+      // icon2.setAttribute("src", `${data.list[11].weather[0].icon}@2x.png`);
+      humidity2.textContent = `${data.list[11].main.humidity}% humidity`;
+      wind2.textContent = `Wind speed: ${data.list[11].wind.speed} km/h`;
+      if(data.list[11].weather[0].main == "Clouds") {
+        iconToday.setAttribute("src", "./assets/images/clouds.png");
+      } else if(data.list[11].weather[0].main == "Clear") {
+        iconToday.setAttribute("src", "./assets/images/clear.png");
+      } else if(data.list[11].weather[0].main == "Drizzle") {
+        iconToday.setAttribute("src", "./assets/images/drizzle.png");
+      } else if(data.list[11].weather[0].main == "Mist") {
+        iconToday.setAttribute("src", "./assets/images/mMist.png");
+      } else if(data.list[11].weather[0].main == "Rain") {
+        iconToday.setAttribute("src", "./assets/images/rain.png");
+      } else if(data.list[11].weather[0].main == "Snow") {
+        iconToday.setAttribute("src", "./assets/images/snow.png");
+      }
 
       temp3.textContent = `${Math.floor(data.list[19].main.temp)} °C`;
-      icon3.setAttribute = ("src", `${data.list[19].weather[0].icon}@2x.png`);
-      humidity3.textContent = `${data.list[19].main.humidity}%`;
-      wind3.textContent = `${data.list[19].wind.speed} km/h`;
-
+      // icon3.setAttribute("src", `${data.list[19].weather[0].icon}@2x.png`);
+      humidity3.textContent = `${data.list[19].main.humidity}% humidity`;
+      wind3.textContent = `Wind speed: ${data.list[19].wind.speed} km/h`;
+      if(data.list[19].weather[0].main == "Clouds") {
+        iconToday.setAttribute("src", "./assets/images/clouds.png");
+      } else if(data.list[19].weather[0].main == "Clear") {
+        iconToday.setAttribute("src", "./assets/images/clear.png");
+      } else if(data.list[19].weather[0].main == "Drizzle") {
+        iconToday.setAttribute("src", "./assets/images/drizzle.png");
+      } else if(data.list[19].weather[0].main == "Mist") {
+        iconToday.setAttribute("src", "./assets/images/mMist.png");
+      } else if(data.list[19].weather[0].main == "Rain") {
+        iconToday.setAttribute("src", "./assets/images/rain.png");
+      } else if(data.list[19].weather[0].main == "Snow") {
+        iconToday.setAttribute("src", "./assets/images/snow.png");
+      }
 
       temp4.textContent = `${Math.floor(data.list[27].main.temp)} °C`;
-      icon4.setAttribute = ("src", `${data.list[27].weather[0].icon}@2x.png`);
-      humidity4.textContent = `${data.list[27].main.humidity}%`;
-      wind4.textContent = `${data.list[27].wind.speed} km/h`;
-
+      // icon4.setAttribute("src", `${data.list[27].weather[0].icon}@2x.png`);
+      humidity4.textContent = `${data.list[27].main.humidity}% humidity`;
+      wind4.textContent = `Wind speed: ${data.list[27].wind.speed} km/h`;
+      if(data.list[27].weather[0].main == "Clouds") {
+        iconToday.setAttribute("src", "./assets/images/clouds.png");
+      } else if(data.list[27].weather[0].main == "Clear") {
+        iconToday.setAttribute("src", "./assets/images/clear.png");
+      } else if(data.list[27].weather[0].main == "Drizzle") {
+        iconToday.setAttribute("src", "./assets/images/drizzle.png");
+      } else if(data.list[27].weather[0].main == "Mist") {
+        iconToday.setAttribute("src", "./assets/images/mMist.png");
+      } else if(data.list[27].weather[0].main == "Rain") {
+        iconToday.setAttribute("src", "./assets/images/rain.png");
+      } else if(data.list[27].weather[0].main == "Snow") {
+        iconToday.setAttribute("src", "./assets/images/snow.png");
+      }
 
       temp5.textContent = `${Math.floor(data.list[35].main.temp)} °C`;
-      icon5.setAttribute = ("src", `${data.list[35].weather[0].icon}@2x.png`);
-      humidity5.textContent = `${data.list[35].main.humidity}%`;
-      wind5.textContent = `${data.list[35].wind.speed} km/h`;
-
-
+      // icon5.setAttribute("src", `${data.list[35].weather[0].icon}@2x.png`);
+      humidity5.textContent = `${data.list[35].main.humidity}% humidity`;
+      wind5.textContent = `Wind speed: ${data.list[35].wind.speed} km/h`;
+      if(data.list[35].weather[0].main == "Clouds") {
+        iconToday.setAttribute("src", "./assets/images/clouds.png");
+      } else if(data.list[35].weather[0].main == "Clear") {
+        iconToday.setAttribute("src", "./assets/images/clear.png");
+      } else if(data.list[35].weather[0].main == "Drizzle") {
+        iconToday.setAttribute("src", "./assets/images/drizzle.png");
+      } else if(data.list[35].weather[0].main == "Mist") {
+        iconToday.setAttribute("src", "./assets/images/mMist.png");
+      } else if(data.list[35].weather[0].main == "Rain") {
+        iconToday.setAttribute("src", "./assets/images/rain.png");
+      } else if(data.list[35].weather[0].main == "Snow") {
+        iconToday.setAttribute("src", "./assets/images/snow.png");
+      }
 
     });
   
 };
 
-searchButton.addEventListener('click', getTodayTemp);
-searchButton.addEventListener('click', getForecast);
+function retrieveHistory() {
+  var searchHistory = JSON.parse(localStorage.getItem("city"));
+  searchButton.setAttribute =("cityInput", searchHistory)
+};
 
-
+searchButton.addEventListener('click', function() {
+  var cityInput = document.getElementById('search-input').value;
+  getTodayTemp(cityInput);
+  getForecast(cityInput);
+});
 
 
 

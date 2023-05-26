@@ -23,10 +23,6 @@ The user only needs to introduce a city name in the search bar and press the sea
 
 Images taken from [this google drive](https://drive.google.com/file/d/1RgSeYljIBzh-ZHIzEFwWmfGIDEMF1bHr/view)
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
 ## License
 
 MIT License
