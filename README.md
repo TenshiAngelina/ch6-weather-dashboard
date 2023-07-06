@@ -13,7 +13,7 @@ A weather website that shows the temperature for a specific city. Made with
 
 ## Installation
 
-There is no need to install any software other than having a browser and access to the internet. The site can be accessed [here]().
+There is no need to install any software other than having a browser and access to the internet. The site can be accessed [here](https://tenshiangelina.github.io/ch6-weather-dashboard/).
 
 ## Usage
 
