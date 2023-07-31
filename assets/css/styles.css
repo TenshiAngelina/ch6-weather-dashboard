@@ -119,6 +119,7 @@ li {
 .card-weather {
   width: 250px;
   display: flex;
+  margin: 1em;
   flex-direction: column;
   align-items: center;
   justify-content: center;
