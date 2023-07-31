@@ -19,6 +19,9 @@ There is no need to install any software other than having a browser and access 
 
 The user only needs to introduce a city name in the search bar and press the search button for the weather for that specific city to be displayed.
 
+![weather-app](https://github.com/TenshiAngelina/ch6-weather-dashboard/assets/110440237/70543bbd-cd24-471b-bfa2-4a896cbc8d04)
+
+
 ## Credits
 
 Images taken from [this google drive](https://drive.google.com/file/d/1RgSeYljIBzh-ZHIzEFwWmfGIDEMF1bHr/view)
