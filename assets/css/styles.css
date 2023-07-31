@@ -7,7 +7,6 @@
   box-sizing: border-box;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
 }
 
 a {
@@ -29,7 +28,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: baseline;
 }
@@ -134,13 +132,14 @@ li {
   margin: 0.2em;
   padding: 0.4em 0.2em 0.2em 0.2em;
 }
+
 .city {
   margin: 0.1em;
   padding: 0.1em;
 }
+
 .icon {
   width: 30%;
   margin: 0.1em;
   padding: 0.1em 0.2em 0.2em 0.2em;
 }
-
